@@ -3,16 +3,20 @@ import { StyleSheet, Text, View } from 'react-native'
 
 function RButton({title}) {
     return (
+        
         <View style={styles.RButtonS}>
-            <Text style={styles.TextButton}>{title}</Text>
+            <View style={styles.buttonborder}>
+                <Text style={styles.TextButton}>{title}</Text>
+            </View>
         </View>
+        
     )
   }
   
 export default class SuperButton extends Component {
     render() {
       return (
-        <View style={styles.container}>
+        <View>
           <RButton title = 'Start'/>
         </View>
       );
@@ -24,17 +28,30 @@ export default class SuperButton extends Component {
   
     RButtonS: {
         backgroundColor: 'white',
-        width: 80,
-        height: 80,
-        borderRadius: 40,
+        width: 160,
+        height: 160,
+        borderRadius: 80,
         justifyContent: 'center',
         alignItems: 'center',
+        borderColor: 'coral',
+        borderWidth: 1,
     },
 
     TextButton: {
         color: 'coral',
         fontSize: 24,
+       
     },
+
+    buttonborder: {
+        width: 144,
+        height: 144,
+        borderRadius: 72,
+        borderWidth: 2,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderColor: 'coral',
+      },
   
     
   })

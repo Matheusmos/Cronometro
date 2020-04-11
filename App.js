@@ -4,6 +4,7 @@ import moment from 'moment'
 import SuperButton from './assets/SuperButton.js'
 
 
+
 const DATA = {
   timer: 123456, 
 }
@@ -27,10 +28,16 @@ function Timer({ interval }) {
 export default class App extends Component {
   render() {
     return (
+      
       <View style={styles.container}>
+        <View>
+          <Text style={styles.textHeader}>Cronômetro Nubank</Text>
+        </View>
         <Timer interval = {DATA.timer}/>
-        <SuperButton/>
+        
+          <SuperButton/>
       </View>
+      
     );
   }
   
@@ -41,14 +48,19 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#772c9a',
     alignItems: 'center',
-    paddingTop: 150,
+    paddingTop: 50,
   },
 
   textTimer: {
     color: 'white',
     fontSize: 78,
+    paddingTop: 50,
     
   },
-
+  
+  textHeader: {
+    color: 'white',
+    fontSize: 24,
+  },
 
 })
