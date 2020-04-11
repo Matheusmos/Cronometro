@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView, StatusBar } from 'react-native'
 import moment from 'moment'
 import SuperButton from './assets/SuperButton.js'
+import Footer from './assets/Footer.js'
 
 
 
@@ -30,12 +31,19 @@ export default class App extends Component {
     return (
       
       <View style={styles.container}>
-        <View>
-          <Text style={styles.textHeader}>Cronômetro Nubank</Text>
-        </View>
-        <Timer interval = {DATA.timer}/>
+        <StatusBar hidden/>
+        <ScrollView>
+          <View style={styles.header}>
+            <Text style={styles.textHeader}>Cronômetro Nubank</Text>
+          </View>
+            <View style={styles.crono}>
+              <Timer interval = {DATA.timer}/>
         
-          <SuperButton/>
+            <SuperButton/>
+            </View>
+        </ScrollView>
+          
+          <Footer/>
       </View>
       
     );
@@ -47,20 +55,53 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#772c9a',
+    
+    /* backgroundColor: '#772c9a',
     alignItems: 'center',
-    paddingTop: 50,
+    paddingTop: 50, */
   },
+
+  header: {
+    flex: 1,
+    backgroundColor: '#ab50ca',
+    justifyContent: 'center',
+    alignItems: 'center',
+    
+  },
+
+  /* footer: {
+    flex: 0.3,
+    backgroundColor: '#ab50ca',
+    bottom: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+  }, */
 
   textTimer: {
     color: 'white',
-    fontSize: 78,
-    paddingTop: 50,
+    fontSize: 74,
+    paddingTop: 30,
+    paddingBottom: 20,
     
   },
   
   textHeader: {
     color: 'white',
-    fontSize: 24,
+    fontSize: 28,
+    fontWeight: 'bold',
+    
   },
+  
+  /* textfooter: {
+    color: 'white',
+    fontSize: 16,
+  }, */
+
+  crono: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  
 
 })
