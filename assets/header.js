@@ -2,20 +2,20 @@ import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
 
-function FooterT({nome}){
+function HeaderDesign(){
     return (
-       <View >
-           <Text style={styles.textFooter}>{'\u00A9'}{nome}</Text>
-       </View> 
+        <View>
+            <Text style={styles.textHeader}>Cronômetro Nubank</Text>
+        </View> 
     )
 }
 
-export default class Footer extends Component {
+export default class Header extends Component {
     render() {
       return (
-        <View style={styles.footer}>
+        <View style={styles.header}>
 
-            <FooterT nome = 'MatheusImagine.com'/>
+            <HeaderDesign/>
           
         </View>
       );
@@ -25,16 +25,19 @@ export default class Footer extends Component {
 
 const styles = StyleSheet.create({
   
-    footer: {
-        flex: 0.2,
+    header: {
+        flex: 0.3,
         backgroundColor: '#ab50ca',
-        bottom: 0,
         justifyContent: 'center',
         alignItems: 'center',
+        
       },
 
-    textFooter: {
+    textHeader: {
         color: 'white',
+        fontSize: 28,
+        fontWeight: 'bold',
+        
     },
   
     
