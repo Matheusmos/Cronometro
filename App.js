@@ -4,7 +4,7 @@ import moment from 'moment'
 import SuperButton from './assets/SuperButton.js'
 import Footer from './assets/Footer.js'
 import Header from './assets/header.js'
-
+import ResetButton from './assets/reset.js'
 
 
 const DATA = {
@@ -29,7 +29,10 @@ export default class App extends Component {
         <ScrollView>
             <View style={styles.crono}>
               <Timer interval = {DATA.timer}/>
-            <SuperButton/>
+              <SuperButton/>
+            </View>
+            <View style={styles.resetAlign}>
+              <ResetButton/>
             </View>
         </ScrollView>
           
@@ -61,6 +64,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
+  resetAlign: {
+    paddingHorizontal: 80,
+  },
   
 
 })
