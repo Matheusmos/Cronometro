@@ -26,7 +26,7 @@ export default class Header extends Component {
 const styles = StyleSheet.create({
   
     header: {
-        flex: 0.3,
+        flex: 0.4,
         backgroundColor: '#ab50ca',
         justifyContent: 'center',
         alignItems: 'center',

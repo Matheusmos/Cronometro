@@ -13,20 +13,22 @@ function FooterT({nome}){
 export default class Footer extends Component {
     render() {
       return (
-        <View style={styles.footer}>
+        
+          <View style={styles.footer}>
 
             <FooterT nome = 'MatheusImagine.com'/>
           
-        </View>
+          </View>
+        
       );
     }
     
   }
 
 const styles = StyleSheet.create({
-  
+    
     footer: {
-        flex: 0.2,
+        flex: 0.3,
         backgroundColor: '#ab50ca',
         bottom: 0,
         justifyContent: 'center',

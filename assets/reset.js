@@ -30,7 +30,7 @@ export default class ResetButton extends Component {
   }
 
   const styles = StyleSheet.create({
-  
+    
     RButtonS: {
         backgroundColor: 'coral',
         width: 80,
