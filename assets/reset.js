@@ -10,13 +10,13 @@ function REButton({title}) {
         <TouchableOpacity>
         <View style={styles.ResButtonS}>
             <View style={styles.buttonborder}>
-                <Text style={styles.TextButton}>{title}</Text>
+                <Text style={styles.resTextButton}>{title}</Text>
             </View>
         </View>  
         </TouchableOpacity>
     )
     
-    }
+}
   
 export default class ResetButton extends Component {
     render() {
@@ -43,13 +43,13 @@ export default class ResetButton extends Component {
         alignSelf: 'stretch',
     },
 
-    TextButton: {
+    resTextButton: {
         color: 'white',
         fontSize: 20,
        
     },
 
-    buttonborder: {
+    resbuttonborder: {
         width: 74,
         height: 74,
         borderRadius: 36,

@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView, StatusBar } from 'react-native'
 import moment from 'moment'
-import SuperButton from './assets/SuperButton.js'
 import Footer from './assets/Footer.js'
 import Header from './assets/header.js'
-import ResetButton from './assets/reset.js'
-
+import SuperStopButton from './assets/SuperStopButton.js'
 
 
 
 const DATA = {
   timer: 1234567, 
+  laps: [12345, 2345, 34567, 98765,12313,1313,123131,123123,123123,12313,123123],
 }
 
 function Timer({ interval }) {
@@ -53,6 +52,29 @@ function REButton() {
   
 }
 
+function Lap({number, interval}){
+  return (
+    <View style={styles.lap}>
+      <Text style={styles.lapText}>Tempo {number}</Text>
+      <Text style={styles.lapText}>{interval}</Text>
+    </View>
+  )
+}
+
+function LapsTable({laps}){
+  return(
+    <ScrollView>
+      {laps.map((lap, index) => (
+        <Lap 
+          number={laps.length - index} 
+          key={laps.length - index} 
+          interval = {lap} 
+        />
+      ))}
+    </ScrollView>
+  )
+}
+
 export default class App extends Component {
   render() {
     return (
@@ -60,16 +82,19 @@ export default class App extends Component {
       <View style={styles.container}>
         <StatusBar hidden/>
         <Header/>
-        <ScrollView>
+        <View style={styles.spaceF}>
             <View style={styles.crono}>
-              <Timer interval = {DATA.timer}/>
+              <Timer interval = {DATA.timer} />
               <RButton/>
             </View>
-            <View style={styles.resetAlign}>
-              <REButton/>
-            </View>
-        </ScrollView>
-          
+              <View style={styles.resetAlign}>
+                <REButton/>
+              </View>
+              <ScrollView style={styles.scrollView}>
+                <LapsTable laps={DATA.laps}/>
+              </ScrollView>
+            
+        </View>
           <Footer/>
       </View>
       
@@ -100,6 +125,7 @@ const styles = StyleSheet.create({
 
   resetAlign: {
     paddingHorizontal: 80,
+    paddingBottom: 10,
   },
 
   RButtonS: {
@@ -156,7 +182,36 @@ resbuttonborder: {
     alignItems: 'center',
     borderColor: 'white',
   },
+  
+lap: {
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  borderColor: 'coral',
+  borderTopWidth: 0.5,
+  paddingTop: 5,
+  paddingBottom: 9,
+},
 
+lapText: {
+  color: 'coral',
+  fontSize: 14,
+},
+
+scrollView: {
+  flex: 1,
+  alignSelf: 'stretch',
+  paddingTop: 10,
+  paddingHorizontal: 10,
+  paddingVertical: 20,
+  paddingBottom: 110,
+  
+},
+
+spaceF: {
+  paddingBottom: 1,
+  
+  paddingTop: 10,
+},
 
 })
 

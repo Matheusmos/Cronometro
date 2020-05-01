@@ -28,11 +28,12 @@ export default class Footer extends Component {
 const styles = StyleSheet.create({
     
     footer: {
-        flex: 0.3,
+        flex: 0.5,
         backgroundColor: '#ab50ca',
         bottom: 0,
         justifyContent: 'center',
         alignItems: 'center',
+        
       },
 
     textFooter: {
