@@ -10,30 +10,47 @@ import ResetButton from './assets/reset.js'
 
 
 const DATA = {
-  timer: 123456, 
+  timer: 1234567, 
 }
 
 function Timer({ interval }) {
   const duration = moment.duration(interval)
   const num = Math.floor(duration.milliseconds() / 10)
-  return <Text style={styles.textTimer}>
+  return (<Text style={styles.textTimer}>
           {duration.minutes()}:{duration.seconds()},{num}
          </Text>
+  )
 }
 
-function RButton({title}) {
-  console.log(title)
+function RButton() {
+  
  
       return (
           <TouchableOpacity activeOpacity={0.8}>
           <View style={styles.RButtonS}>
             <View style={styles.buttonborder}>
-                <Text style={styles.TextButton}>{title}</Text>
+                <Text style={styles.TextButton}>Start</Text>
             </View>
         </View>
           </TouchableOpacity> 
       )
       
+}
+
+function REButton() {
+   
+    
+  return (
+      
+      <TouchableOpacity>
+      <View style={styles.ResButtonS}>
+          <View style={styles.resbuttonborder}>
+              <Text style={styles.resTextButton}>Reset</Text>
+          </View>
+      </View>  
+      </TouchableOpacity>
+  )
+  
 }
 
 export default class App extends Component {
@@ -46,10 +63,10 @@ export default class App extends Component {
         <ScrollView>
             <View style={styles.crono}>
               <Timer interval = {DATA.timer}/>
-              <RButton title = 'Start'/>
+              <RButton/>
             </View>
             <View style={styles.resetAlign}>
-              <ResetButton/>
+              <REButton/>
             </View>
         </ScrollView>
           
@@ -112,6 +129,34 @@ buttonborder: {
     borderColor: 'coral',
   },
   
+  ResButtonS: {
+    backgroundColor: 'coral',
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderColor: 'white',
+    borderWidth: 1,
+    alignSelf: 'stretch',
+},
+
+resTextButton: {
+    color: 'white',
+    fontSize: 20,
+   
+},
+
+resbuttonborder: {
+    width: 74,
+    height: 74,
+    borderRadius: 36,
+    borderWidth: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderColor: 'white',
+  },
+
 
 })
 

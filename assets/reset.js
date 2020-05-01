@@ -8,7 +8,7 @@ function REButton({title}) {
     return (
         
         <TouchableOpacity>
-        <View style={styles.RButtonS}>
+        <View style={styles.ResButtonS}>
             <View style={styles.buttonborder}>
                 <Text style={styles.TextButton}>{title}</Text>
             </View>
@@ -31,7 +31,7 @@ export default class ResetButton extends Component {
 
   const styles = StyleSheet.create({
     
-    RButtonS: {
+    ResButtonS: {
         backgroundColor: 'coral',
         width: 80,
         height: 80,
